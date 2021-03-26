@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
 }
@@ -22,4 +26,18 @@ body {
   width: 400px;
   background-color: #dddd;
   padding: 50px;
+}
+
+.rightside label {
+  display: block;
+  margin-top: 20px;
+}
+
+.rightside input {
+  width: 100%;
+  border: 1px solid #9999;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 14px;
+  outline: 0;
 }
