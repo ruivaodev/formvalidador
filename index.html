@@ -15,11 +15,11 @@
     </div>
     <div class="rightside">
        <h1>Crie sua Conta</h1>
-       <form method="POST">
+       <form method="POST" class="b7validator" >
 
          <label>
            Seu Nome </label>
-           <input type="text" name="name"/>
+           <input type="text" name="name" data-rules="required|min=6"/>
          </label>
          <label>
           Seu e-mail </label>
