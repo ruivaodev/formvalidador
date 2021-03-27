@@ -17,30 +17,38 @@ let B7validator = {
     if (send) {
       form.submit();
     }
+  },
 
-    checkInput: (input) => {
-      let rules = input.getAttribute("data-rules");
+  checkInput: (input) => {
+    let rules = input.getAttribute("data-rules");
 
-      if (rules !== null) {
-        rules = rules.split("|");
-        for (let k in rules) {
-          let rDetails = rules[k].split("=");
-          switch (rDetails[0]) {
-            case "required":
-              if (input.value == "") {
-                return "campo não pode ficar em branco.";
-              }
+    if (rules !== null) {
+      rules = rules.split("|");
+      for (let k in rules) {
+        let rDetails = rules[k].split("=");
+        switch (rDetails[0]) {
+          case "required":
+            if (input.value == "") {
+              return "campo não pode ficar em branco.";
+            }
 
-              break;
+            break;
 
-            case "min":
-              break;
-          }
+          case "min":
+            break;
         }
       }
+    }
 
-      return true;
-    };
+    return true;
+  },
+
+  showError: (input) => {
+    input.style.borderColor = "#FF0000";
+
+    let errorElement = document.createElement("div");
+    errorElement.classList.add("error");
+    errorElement.innerHTML = error;
   },
 };
 
